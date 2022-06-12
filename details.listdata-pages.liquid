@@ -1,0 +1,31 @@
+---
+  layout: template.liquid
+  pagination:
+      data: listdata.data
+      size: 1
+      alias: data
+  permalink: "/{{data.id}}/"
+---
+{% include '_navbar.liquid' %}
+<div class="card mx-6 mt-4">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{data.image}}" alt="{{data.title}}">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{data.title}}</p>
+        <p class="subtitle is-6 is-link">${{data.price}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div>{{data.description}}</div>
+      <br>
+      <span class="tag is-success">Rating : {{data.rating.rate}}</span>
+      <span class="tag is-info">Category : {{data.category}}</span>
+    </div>
+  </div>
+</div>

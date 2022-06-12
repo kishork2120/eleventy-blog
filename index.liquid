@@ -1,0 +1,32 @@
+---
+  layout: template.liquid
+---
+{%include '_navbar.liquid'%}
+<div class="table-container mt-4">
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>image</td>
+        <td>title</td>
+        <td>price</td>
+        <td>description</td>
+        <td>category</td>
+        <td>rating</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in listdata.data %}
+        <tr>
+          <td>{{data.id}}</td>
+          <td><img src="{{data.image}}" height="30px" width="30px"/></td>
+          <td><a href="/{{data.id}}">{{data.title}}</a></td>
+          <td>{{data.price}}</td>
+          <td>{{data.description}}</td>
+          <td>{{data.category}}</td>
+          <td>{{data.rating.rate}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
